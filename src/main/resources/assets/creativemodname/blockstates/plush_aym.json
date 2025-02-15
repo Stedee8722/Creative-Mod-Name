@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "creativemodname:block/plush_aym",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "creativemodname:block/plush_aym",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "creativemodname:block/plush_aym"
+    },
+    "facing=west": {
+      "model": "creativemodname:block/plush_aym",
+      "y": 90
+    }
+  }
+}

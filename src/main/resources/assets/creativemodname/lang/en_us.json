@@ -1,0 +1,13 @@
+{
+  "block.creativemodname.plush_aym": "Plush Aym",
+
+  "item.creativemodname.moon_staff": "Moon Staff",
+
+  "tooltip.creativemodname.moon_staff": "§kthe cutie §rStaff of §4Aym, Second Son §rof §7Forneus§r §kthe cutie",
+  "tooltip.creativemodname.plush_aym": "§4Second Son §rof §7Forneus§r, §mCutie Patootie :3",
+
+  "creativetab.creativemodname.weapons": "Weapons",
+  "creativetab.creativemodname.plushies": "Plushies",
+
+  "sounds.creativemodname.plushie_squeaks": "Plushie squeaks"
+}
