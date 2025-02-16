@@ -13,6 +13,9 @@
     "client": [
       "net.stedee.creativemodname.client.CreativeModNameClient"
     ],
+    "fabric-datagen": [
+      "net.stedee.creativemodname.CreativeModNameDataGen"
+    ],
     "main": [
       "net.stedee.creativemodname.CreativeModName"
     ]

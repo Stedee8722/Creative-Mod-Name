@@ -1,13 +1,27 @@
 {
   "block.creativemodname.plush_aym": "Plush Aym",
+  "block.creativemodname.plush_rat": "Plush Rat",
+  "block.creativemodname.plush_hypno_rat": "Plush Hypno Rat",
+  "block.creativemodname.plush_acid": "Plush Acid",
 
   "item.creativemodname.moon_staff": "Moon Staff",
+  "item.creativemodname.cleaver": "Toy Cleaver",
+  "item.creativemodname.worn_cleaver": "Worn Cleaver",
+  "item.creativemodname.godly_cleaver": "Godly Cleaver",
 
   "tooltip.creativemodname.moon_staff": "§kthe cutie §rStaff of §4Aym, Second Son §rof §7Forneus§r §kthe cutie",
   "tooltip.creativemodname.plush_aym": "§4Second Son §rof §7Forneus§r, §mCutie Patootie :3",
+  "tooltip.creativemodname.plush_rat": "§dFunny Plush §rof the Glutton Rat",
+  "tooltip.creativemodname.plush_hypno_rat": "§mScawy§r §dFunny Plush §rof the Glutton Rat",
+  "tooltip.creativemodname.plush_acid": "A §bbird lady plush §rmade out of §bfeathers §rand §5wife material",
+  "tooltip.creativemodname.cleaver": "Just a tacky replica",
+  "tooltip.creativemodname.worn_cleaver": "Cleaver of the §4sin §rof §6gluttony§r",
+  "tooltip.creativemodname.godly_cleaver": "Cleaver of the §4sin §rof §6gluttony§r, imbued with a §3hunger §rfor §c§llife",
 
   "creativetab.creativemodname.weapons": "Weapons",
   "creativetab.creativemodname.plushies": "Plushies",
 
-  "sounds.creativemodname.plushie_squeaks": "Plushie squeaks"
+  "sounds.creativemodname.plushie_squeaks": "Plushie squeaks",
+
+  "effect.creativemodname.bloodloss": "Bloodloss"
 }

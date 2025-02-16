@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "creativemodname:block/plush_aym",
-		"particle": "creativemodname:block/plush_aym"
+		"0": "creativemodname:block/plushies/plush_aym",
+		"particle": "creativemodname:block/plushies/plush_aym"
 	},
 	"render_type": "cutout",
 	"elements": [

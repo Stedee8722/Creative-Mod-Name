@@ -1,13 +1,27 @@
 {
   "block.creativemodname.plush_aym": "Thú bông Aym",
+  "block.creativemodname.plush_rat": "Thú bông Rat",
+  "block.creativemodname.plush_hypno_rat": "Thú bông Hypno Nova",
+  "block.creativemodname.plush_acid": "Thú bông Acid",
 
   "item.creativemodname.moon_staff": "Trượng Mặt Trăng",
+  "item.creativemodname.cleaver": "Dao phay đồ chơi",
+  "item.creativemodname.worn_cleaver": "Dao phay mòn",
+  "item.creativemodname.godly_cleaver": "Dao phay thần thoại",
 
   "tooltip.creativemodname.moon_staff": "§kdễ thương §rCây trượng hình lưỡi liềm của §4Aym, con trai thứ hai §rcủa §7Forneus§r §r§kdễ thương",
   "tooltip.creativemodname.plush_aym": "§4Con trai thứ hai §rcủa §7Forneus§r, §mDễ thương :3",
+  "tooltip.creativemodname.plush_rat": "§dThú bông dễ thương §rcủa chú chuột tham ăn",
+  "tooltip.creativemodname.plush_hypno_rat": "§dThú bông §m§0đáng sợ§r §ddễ thương §rcủa chú chuột tham ăn",
+  "tooltip.creativemodname.plush_acid": "§dThú bông §m§0đáng sợ§r §ddễ thương §rcủa chú chuột tham ăn",
+  "tooltip.creativemodname.cleaver": "Chỉ là đồ chơi",
+  "tooltip.creativemodname.worn_cleaver": "Dao phay của §4Tội đồ §6Tham ăn§r, trao §3nạn đói",
+  "tooltip.creativemodname.godly_cleaver": "Dao phay của §4Tội đồ §6Tham ăn§r, trao §3nạn đói, §rđổi §c§lmạng",
 
   "creativetab.creativemodname.weapons": "Vũ khí",
   "creativetab.creativemodname.plushies": "Thú bông",
 
-  "sounds.creativemodname.plushie_squeaks": "Thú bông kêu chít"
+  "sounds.creativemodname.plushie_squeaks": "Thú bông kêu chít",
+
+  "effect.creativemodname.bloodloss": "Chảy máu"
 }

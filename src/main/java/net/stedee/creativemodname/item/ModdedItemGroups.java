@@ -17,6 +17,9 @@ public class ModdedItemGroups {
                     .displayName(Text.translatable("creativetab." + CreativeModName.MOD_ID + ".weapons"))
                     .entries(((displayContext, entries) -> {
                         entries.add(ModdedItems.MOON_STAFF);
+                        entries.add(ModdedItems.CLEAVER);
+                        entries.add(ModdedItems.WORN_CLEAVER);
+                        entries.add(ModdedItems.GODLY_CLEAVER);
                     }))
                     .build());
 
@@ -26,6 +29,9 @@ public class ModdedItemGroups {
                     .displayName(Text.translatable("creativetab." + CreativeModName.MOD_ID + ".plushies"))
                     .entries((((displayContext, entries) -> {
                         entries.add(ModdedPlushieBlocks.PLUSH_AYM.asItem());
+                        entries.add(ModdedPlushieBlocks.PLUSH_RAT.asItem());
+                        entries.add(ModdedPlushieBlocks.PLUSH_HYPNO_RAT.asItem());
+                        entries.add(ModdedPlushieBlocks.PLUSH_ACID.asItem());
                     })))
                     .build());
 

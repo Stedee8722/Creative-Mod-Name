@@ -1,0 +1,7 @@
+{
+	"parent": "creativemodname:block/plush_rat",
+	"textures": {
+		"0": "creativemodname:block/plushies/plush_hypno_rat",
+		"particle": "creativemodname:block/plushies/plush_hypno_rat"
+	}
+}

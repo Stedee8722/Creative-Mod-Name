@@ -1,0 +1,9 @@
+{
+	"parent": "creativemodname:item/worn_cleaver",
+	"textures": {
+		"0": "creativemodname:item/weapons/godly_cleaver_3",
+		"1": "creativemodname:item/weapons/godly_cleaver_2",
+		"2": "creativemodname:item/weapons/godly_cleaver_1",
+		"particle": "creativemodname:item/weapons/godly_cleaver_3"
+	}
+}

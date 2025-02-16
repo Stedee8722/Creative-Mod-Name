@@ -32,7 +32,7 @@ public class MoonStaffItem extends SwordItem {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack item = user.getStackInHand(hand);
         world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_BLAZE_SHOOT, SoundCategory.PLAYERS, 1F, 1F);
-        user.getItemCooldownManager().set(item.getItem(), 200);
+            user.getItemCooldownManager().set(item.getItem(), !user.isCreative() ? 200 : 10);
         if (!world.isClient()) {
             Vec3d look = user.getRotationVec(1F);
 
