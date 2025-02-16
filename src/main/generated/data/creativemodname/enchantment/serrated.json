@@ -16,14 +16,15 @@
   },
   "exclusive_set": "#minecraft:exclusive_set/damage",
   "max_cost": {
-    "base": 10,
-    "per_level_above_first": 5
+    "base": 20,
+    "per_level_above_first": 10
   },
   "max_level": 3,
   "min_cost": {
-    "base": 4,
-    "per_level_above_first": 6
+    "base": 9,
+    "per_level_above_first": 8
   },
+  "primary_items": "#creativemodname:godly_cleaver",
   "slots": [
     "mainhand",
     "offhand"

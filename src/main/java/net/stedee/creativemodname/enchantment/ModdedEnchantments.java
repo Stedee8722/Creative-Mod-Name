@@ -24,10 +24,11 @@ public class ModdedEnchantments {
 
         register(registerable, SERRATED, Enchantment.builder(Enchantment.definition(
                 items.getOrThrow(ModdedTags.Items.GODLY_CLEAVER),
+                items.getOrThrow(ModdedTags.Items.GODLY_CLEAVER),
                 15,
                 3,
-                Enchantment.leveledCost(4, 6),
-                Enchantment.leveledCost(10, 5),
+                Enchantment.leveledCost(9, 8),
+                Enchantment.leveledCost(15, 10),
                 2,
                 AttributeModifierSlot.MAINHAND, AttributeModifierSlot.OFFHAND))
                 .exclusiveSet(enchantments.getOrThrow(EnchantmentTags.DAMAGE_EXCLUSIVE_SET))
