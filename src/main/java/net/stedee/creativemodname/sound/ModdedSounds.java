@@ -8,6 +8,10 @@ import net.stedee.creativemodname.CreativeModName;
 
 public class ModdedSounds {
     public static final SoundEvent PLUSHIE_SQUEAKS = registerSoundEvent("plushie_squeaks");
+    public static final SoundEvent GOAT_SCREAMS = registerSoundEvent("goat_screams");
+    public static final SoundEvent CAT_MEOWS = registerSoundEvent("cat_meows");
+    public static final SoundEvent LAMB_BAAHS = registerSoundEvent("lamb_baahs");
+    public static final SoundEvent CUTE_LAMB_BAAHS = registerSoundEvent("cute_lamb_baahs");
 
     private static SoundEvent registerSoundEvent(String name) {
         Identifier id = Identifier.of(CreativeModName.MOD_ID, name);

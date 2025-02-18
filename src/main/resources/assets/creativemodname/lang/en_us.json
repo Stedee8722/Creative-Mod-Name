@@ -22,6 +22,9 @@
   "creativetab.creativemodname.plushies": "Plushies",
 
   "sounds.creativemodname.plushie_squeaks": "Plushie squeaks",
+  "sounds.creativemodname.goat_screams": "Goat screams",
+  "sounds.creativemodname.cat_meows": "Cat meows",
+  "sounds.creativemodname.lamb_baahs": "Lamb baahs",
 
   "effect.creativemodname.bloodloss": "Bloodloss",
 
@@ -30,5 +33,10 @@
   "tag.block.creativemodname.plushies": "Plushies",
   "tag.item.creativemodname.cleavers": "Cleavers",
   "tag.item.creativemodname.godly_cleaver": "Godly Cleaver (Fucking Minecraft need tags for enchants now)",
-  "tag.item.creativemodname.weapons": "Weapons"
+  "tag.item.creativemodname.weapons": "Weapons",
+
+  "key.category.creativemodname.sounds": "Sounds (Creative Mod Name)",
+  "key.creativemodname.goat_screams": "Make \"Goat Screams\" Sound",
+  "key.creativemodname.cat_meows": "Make \"Cat Meows\" Sound",
+  "key.creativemodname.lamb_baahs": "Make \"Lamb Baahs\" Sound"
 }

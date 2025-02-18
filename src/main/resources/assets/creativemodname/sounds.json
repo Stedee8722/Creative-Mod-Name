@@ -6,5 +6,38 @@
       "creativemodname:squeak2",
       "creativemodname:squeak3"
     ]
+  },
+  "goat_screams": {
+    "subtitle": "sounds.creativemodname.goat_screams",
+    "sounds": [
+      "creativemodname:goat_scream_1",
+      "creativemodname:goat_scream_2",
+      "creativemodname:goat_scream_3",
+      "creativemodname:goat_scream_4",
+      "creativemodname:goat_scream_5"
+    ]
+  },
+  "lamb_baahs": {
+    "subtitle": "sounds.creativemodname.lamb_baahs",
+    "sounds": [
+      "creativemodname:lamb_baah_1",
+      "creativemodname:lamb_baah_2",
+      "creativemodname:lamb_baah_3",
+      "creativemodname:lamb_baah_4"
+    ]
+  },
+  "cute_lamb_baahs": {
+    "subtitle": "sounds.creativemodname.lamb_baahs",
+    "sounds": [
+      "creativemodname:lamb_baah_1",
+      "creativemodname:lamb_long_baah_1",
+      "creativemodname:lamb_long_baah_2"
+    ]
+  },
+  "cat_meows": {
+    "subtitle": "sounds.creativemodname.cat_meows",
+    "sounds": [
+      "creativemodname:cat_meow"
+    ]
   }
 }

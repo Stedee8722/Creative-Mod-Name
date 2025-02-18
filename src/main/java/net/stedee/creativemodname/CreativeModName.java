@@ -6,6 +6,7 @@ import net.stedee.creativemodname.effect.ModdedEffects;
 import net.stedee.creativemodname.enchantment.ModdedEnchantmentEffects;
 import net.stedee.creativemodname.item.ModdedItemGroups;
 import net.stedee.creativemodname.item.ModdedItems;
+import net.stedee.creativemodname.networking.ModdedPackets;
 import net.stedee.creativemodname.sound.ModdedSounds;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,5 +27,7 @@ public class CreativeModName implements ModInitializer {
         ModdedEffects.registerEffects();
 
         ModdedEnchantmentEffects.registerEnchantmentEffects();
+
+        ModdedPackets.registerC2SPackets();
     }
 }
