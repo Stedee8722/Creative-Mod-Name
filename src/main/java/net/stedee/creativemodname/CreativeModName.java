@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import net.stedee.creativemodname.block.ModdedPlushieBlocks;
 import net.stedee.creativemodname.effect.ModdedEffects;
 import net.stedee.creativemodname.enchantment.ModdedEnchantmentEffects;
+import net.stedee.creativemodname.entity.ModdedEntities;
 import net.stedee.creativemodname.item.ModdedItemGroups;
 import net.stedee.creativemodname.item.ModdedItems;
 import net.stedee.creativemodname.networking.ModdedPackets;
@@ -21,6 +22,7 @@ public class CreativeModName implements ModInitializer {
 
         ModdedItems.registerModItems();
         ModdedPlushieBlocks.registerModBlocks();
+        ModdedEntities.registerEntities();
 
         ModdedSounds.registerSounds();
 

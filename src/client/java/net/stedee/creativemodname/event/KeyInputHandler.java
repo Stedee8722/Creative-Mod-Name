@@ -16,22 +16,29 @@ public class KeyInputHandler {
     public static final String KEY_GOAT_SCREAMS = "key.creativemodname.goat_screams";
     public static final String KEY_CAT_MEOWS = "key.creativemodname.cat_meows";
     public static final String KEY_LAMB_BAAHS = "key.creativemodname.lamb_baahs";
+    public static final String KEY_RAT_SQUEAKS = "key.creativemodname.rat_squeaks";
 
     public static KeyBinding goatScreamKey;
     public static KeyBinding catMeowsKey;
     public static KeyBinding lambBaahsKey;
+    public static KeyBinding ratSqueaksKey;
 
     public static void registerKeyInputs() {
         ClientTickEvents.END_CLIENT_TICK.register(minecraftClient -> {
             if (goatScreamKey.wasPressed()) {
                 ClientPlayNetworking.send(new MakeSoundC2SPacket(ModdedSounds.GOAT_SCREAMS, 1F));
-            } else if (lambBaahsKey.wasPressed()) {
+            }
+            if (ratSqueaksKey.wasPressed()) {
+                ClientPlayNetworking.send(new MakeSoundC2SPacket(ModdedSounds.RAT_SQUEAKS, 1F));
+            }
+            if (lambBaahsKey.wasPressed()) {
                 if (minecraftClient.player != null && Objects.equals(minecraftClient.player.getName().toString(), "sossh3d")) {
                     ClientPlayNetworking.send(new MakeSoundC2SPacket(ModdedSounds.CUTE_LAMB_BAAHS, 1F));
                     return;
                 }
                 ClientPlayNetworking.send(new MakeSoundC2SPacket(ModdedSounds.LAMB_BAAHS, 1F));
-            } else if (catMeowsKey.wasPressed()) {
+            }
+            if (catMeowsKey.wasPressed()) {
                 float min = 0.75F;
                 float max = 1.25F;
                 Random r = new Random();
@@ -55,6 +62,12 @@ public class KeyInputHandler {
         ));
         lambBaahsKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 KEY_LAMB_BAAHS,
+                InputUtil.Type.KEYSYM,
+                InputUtil.UNKNOWN_KEY.getCode(),
+                KEY_CATEGORY_SOUNDS
+        ));
+        ratSqueaksKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+                KEY_RAT_SQUEAKS,
                 InputUtil.Type.KEYSYM,
                 InputUtil.UNKNOWN_KEY.getCode(),
                 KEY_CATEGORY_SOUNDS

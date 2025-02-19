@@ -39,5 +39,14 @@
     "sounds": [
       "creativemodname:cat_meow"
     ]
+  },
+  "rat_squeaks": {
+    "subtitle": "sounds.creativemodname.rat_squeaks",
+    "sounds": [
+      "creativemodname:rat_squeak_1",
+      "creativemodname:rat_squeak_2",
+      "creativemodname:rat_squeak_3",
+      "creativemodname:rat_squeak_4"
+    ]
   }
 }

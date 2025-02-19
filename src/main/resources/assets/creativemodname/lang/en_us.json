@@ -25,6 +25,7 @@
   "sounds.creativemodname.goat_screams": "Goat screams",
   "sounds.creativemodname.cat_meows": "Cat meows",
   "sounds.creativemodname.lamb_baahs": "Lamb baahs",
+  "sounds.creativemodname.rat_squeaks": "Rat squeaks",
 
   "effect.creativemodname.bloodloss": "Bloodloss",
 
@@ -38,5 +39,6 @@
   "key.category.creativemodname.sounds": "Sounds (Creative Mod Name)",
   "key.creativemodname.goat_screams": "Make \"Goat Screams\" Sound",
   "key.creativemodname.cat_meows": "Make \"Cat Meows\" Sound",
-  "key.creativemodname.lamb_baahs": "Make \"Lamb Baahs\" Sound"
+  "key.creativemodname.lamb_baahs": "Make \"Lamb Baahs\" Sound",
+  "key.creativemodname.rat_squeaks": "Make \"Rat Squeaks\" Sound"
 }
