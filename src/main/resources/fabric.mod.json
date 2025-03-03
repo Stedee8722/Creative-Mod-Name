@@ -15,9 +15,6 @@
 		"main": [
 			"net.stedee.creativemodname.CreativeModName"
 		],
-		"server": [
-			"net.stedee.creativemodname.CreativeModNameServer"
-		],
 		"client": [
 			"net.stedee.creativemodname.CreativeModNameClient"
 		],
