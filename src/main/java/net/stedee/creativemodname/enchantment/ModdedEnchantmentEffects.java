@@ -6,15 +6,11 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.stedee.creativemodname.CreativeModName;
-import net.stedee.creativemodname.enchantment.custom.BiggerFireballEnchantmentEffect;
 import net.stedee.creativemodname.enchantment.custom.SerratedEnchantmentEffect;
 
 public class ModdedEnchantmentEffects {
     public static final MapCodec<? extends EnchantmentEntityEffect> SERRATED =
             registerEntityEffect("serrated", SerratedEnchantmentEffect.CODEC);
-
-    public static final MapCodec<? extends EnchantmentEntityEffect> BIGGER_FIREBALL =
-            registerEntityEffect("bigger_fireball", BiggerFireballEnchantmentEffect.CODEC);
 
     private static MapCodec<? extends EnchantmentEntityEffect> registerEntityEffect(String name,
                                                                                     MapCodec<? extends EnchantmentEntityEffect> codec) {

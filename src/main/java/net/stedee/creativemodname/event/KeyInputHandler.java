@@ -22,27 +22,38 @@ public class KeyInputHandler {
     public static KeyBinding catMeowsKey;
     public static KeyBinding lambBaahsKey;
     public static KeyBinding ratSqueaksKey;
+    public static long lastTime = 0;
+    public static final long cooldown = 120;
 
     public static void registerKeyInputs() {
         ClientTickEvents.END_CLIENT_TICK.register(minecraftClient -> {
-            if (goatScreamKey.wasPressed()) {
+            long currentTime = System.currentTimeMillis();
+            if (currentTime - lastTime < cooldown) {
+                return;
+            }
+            if (goatScreamKey.isPressed()) {
                 ClientPlayNetworking.send(new MakeSoundC2SPacket(ModdedSounds.GOAT_SCREAMS, 1F));
+                lastTime = currentTime;
             }
-            if (ratSqueaksKey.wasPressed()) {
+            if (ratSqueaksKey.isPressed()) {
                 ClientPlayNetworking.send(new MakeSoundC2SPacket(ModdedSounds.RAT_SQUEAKS, 1F));
+                lastTime = currentTime;
             }
-            if (lambBaahsKey.wasPressed()) {
-                if (minecraftClient.player != null && Objects.equals(minecraftClient.player.getName().toString(), "sossh3d")) {
+            if (lambBaahsKey.isPressed()) {
+                if (minecraftClient.player != null && Objects.equals(minecraftClient.player.getName().getString(), "sossh3d")) {
                     ClientPlayNetworking.send(new MakeSoundC2SPacket(ModdedSounds.CUTE_LAMB_BAAHS, 1F));
+                    lastTime = currentTime;
                     return;
                 }
                 ClientPlayNetworking.send(new MakeSoundC2SPacket(ModdedSounds.LAMB_BAAHS, 1F));
+                lastTime = currentTime;
             }
-            if (catMeowsKey.wasPressed()) {
+            if (catMeowsKey.isPressed()) {
                 float min = 0.75F;
                 float max = 1.25F;
                 Random r = new Random();
                 ClientPlayNetworking.send(new MakeSoundC2SPacket(ModdedSounds.CAT_MEOWS, min + r.nextFloat() * (max - min)));
+                lastTime = currentTime;
             }
         });
     }

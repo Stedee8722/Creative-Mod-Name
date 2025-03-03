@@ -1,10 +1,12 @@
 {
-	"required": true,
-	"package": "net.stedee.creativemodname.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-	],
-	"injectors": {
-		"defaultRequire": 1
+  "required": true,
+  "package": "net.stedee.creativemodname.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ItemEntityMixin",
+    "ItemMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
 	}
 }

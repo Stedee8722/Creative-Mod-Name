@@ -3,17 +3,6 @@
   "description": {
     "translate": "enchantment.creativemodname.bigger_fireball"
   },
-  "effects": {
-    "minecraft:post_attack": [
-      {
-        "affected": "victim",
-        "effect": {
-          "type": "creativemodname:bigger_fireball"
-        },
-        "enchanted": "attacker"
-      }
-    ]
-  },
   "exclusive_set": "#minecraft:exclusive_set/damage",
   "max_cost": {
     "base": 15,

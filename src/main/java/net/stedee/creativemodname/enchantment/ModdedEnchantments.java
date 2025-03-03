@@ -10,7 +10,6 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.EnchantmentTags;
 import net.minecraft.util.Identifier;
 import net.stedee.creativemodname.CreativeModName;
-import net.stedee.creativemodname.enchantment.custom.BiggerFireballEnchantmentEffect;
 import net.stedee.creativemodname.enchantment.custom.SerratedEnchantmentEffect;
 import net.stedee.creativemodname.util.ModdedTags;
 
@@ -48,10 +47,7 @@ public class ModdedEnchantments {
                         Enchantment.leveledCost(15, 10),
                         2,
                         AttributeModifierSlot.MAINHAND, AttributeModifierSlot.OFFHAND))
-                .exclusiveSet(enchantments.getOrThrow(EnchantmentTags.DAMAGE_EXCLUSIVE_SET))
-                .addEffect(EnchantmentEffectComponentTypes.POST_ATTACK,
-                        EnchantmentEffectTarget.ATTACKER, EnchantmentEffectTarget.VICTIM,
-                        new BiggerFireballEnchantmentEffect()));
+                .exclusiveSet(enchantments.getOrThrow(EnchantmentTags.DAMAGE_EXCLUSIVE_SET)));
     }
 
     private static void register(Registerable<Enchantment> registry, RegistryKey<Enchantment> key, Enchantment.Builder builder) {
