@@ -23,11 +23,7 @@ public class CreativeModName implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        // Block Rendering type
-        BlockRenderLayerMap.INSTANCE.putBlock(ModdedPlushieBlocks.PLUSH_AYM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModdedPlushieBlocks.PLUSH_RAT, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModdedPlushieBlocks.PLUSH_HYPNO_RAT, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModdedPlushieBlocks.PLUSH_ACID, RenderLayer.getCutout());
+        setBlockRenderingType();
 
         ModdedItemGroups.registerItemGroup();
 
@@ -47,5 +43,13 @@ public class CreativeModName implements ModInitializer {
 
         ModdedPackets.registerC2SPackets();
         ModdedPackets.registerS2CPackets();
+    }
+
+    public void setBlockRenderingType() {
+        // Block Rendering type
+        BlockRenderLayerMap.INSTANCE.putBlock(ModdedPlushieBlocks.PLUSH_AYM, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModdedPlushieBlocks.PLUSH_RAT, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModdedPlushieBlocks.PLUSH_HYPNO_RAT, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModdedPlushieBlocks.PLUSH_ACID, RenderLayer.getCutout());
     }
 }

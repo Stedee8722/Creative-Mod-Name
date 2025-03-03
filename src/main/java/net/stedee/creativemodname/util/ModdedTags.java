@@ -23,6 +23,8 @@ public class ModdedTags {
 
         public static final TagKey<Item> GODLY_CLEAVER = createTag("godly_cleaver");
 
+        public static final TagKey<Item> MOON_STAFF = createTag("moon_staff");
+
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(CreativeModName.MOD_ID, name));
         }

@@ -4,10 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.registry.RegistryBuilder;
 import net.minecraft.registry.RegistryKeys;
-import net.stedee.creativemodname.datagen.ModdedBlockTagProvider;
-import net.stedee.creativemodname.datagen.ModdedItemTagProvider;
-import net.stedee.creativemodname.datagen.ModdedLootTableProvider;
-import net.stedee.creativemodname.datagen.ModdedRegistryProvider;
+import net.stedee.creativemodname.datagen.*;
 import net.stedee.creativemodname.enchantment.ModdedEnchantments;
 
 public class CreativeModNameDataGen implements DataGeneratorEntrypoint {
@@ -19,6 +16,7 @@ public class CreativeModNameDataGen implements DataGeneratorEntrypoint {
         pack.addProvider(ModdedItemTagProvider::new);
         pack.addProvider(ModdedLootTableProvider::new);
         pack.addProvider(ModdedRegistryProvider::new);
+        pack.addProvider(ModdedRecipeProvider::new);
     }
 
     @Override

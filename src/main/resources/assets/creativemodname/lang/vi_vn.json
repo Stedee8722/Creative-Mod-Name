@@ -5,9 +5,9 @@
   "block.creativemodname.plush_acid": "Thú bông Acid",
 
   "item.creativemodname.moon_staff": "Trượng Mặt Trăng",
-  "item.creativemodname.cleaver": "Dao phay đồ chơi",
-  "item.creativemodname.worn_cleaver": "Dao phay mòn",
-  "item.creativemodname.godly_cleaver": "Dao phay thần thoại",
+  "item.creativemodname.cleaver": "Dao phay Đồ chơi",
+  "item.creativemodname.worn_cleaver": "Dao phay Mòn",
+  "item.creativemodname.godly_cleaver": "Dao phay Thần thoại",
 
   "tooltip.creativemodname.moon_staff": "§kdễ thương §rCây trượng hình lưỡi liềm của §4Aym, con trai thứ hai §rcủa §7Forneus§r §r§kdễ thương",
   "tooltip.creativemodname.plush_aym": "§4Con trai thứ hai §rcủa §7Forneus§r, §mDễ thương :3",
@@ -22,6 +22,25 @@
   "creativetab.creativemodname.plushies": "Thú bông",
 
   "sounds.creativemodname.plushie_squeaks": "Thú bông kêu chít",
+  "sounds.creativemodname.goat_screams": "Dê la ahh",
+  "sounds.creativemodname.cat_meows": "Mèo kêu meo",
+  "sounds.creativemodname.lamb_baahs": "Cừu kêu baa",
+  "sounds.creativemodname.rat_squeaks": "Chuột kêu chít",
 
-  "effect.creativemodname.bloodloss": "Chảy máu"
+  "effect.creativemodname.bloodloss": "Chảy máu",
+
+  "enchantment.creativemodname.serrated": "Răng cưa",
+  "enchantment.creativemodname.bigger_fireball": "Cầu lửa To",
+
+  "tag.block.creativemodname.plushies": "Thú bông",
+  "tag.item.creativemodname.cleavers": "Dao phay",
+  "tag.item.creativemodname.godly_cleaver": "Dao phay Thần thoại (Fucking Minecraft need tags for enchants now)",
+  "tag.item.creativemodname.moon_staff": "Trượng Mặt Trăng (Fucking Minecraft need tags for enchants now)",
+  "tag.item.creativemodname.weapons": "Vũ khí",
+
+  "key.category.creativemodname.sounds": "Âm thanh (Creative Mod Name)",
+  "key.creativemodname.goat_screams": "Tạo tiếng \"Dê la ahh\"",
+  "key.creativemodname.cat_meows": "Tạo tiếng \"Mèo kêu meo\"",
+  "key.creativemodname.lamb_baahs": "Tạo tiếng \"Cừu kêu baa\"",
+  "key.creativemodname.rat_squeaks": "Tạo tiếng \"Chuột kêu chít\""
 }

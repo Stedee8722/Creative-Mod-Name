@@ -10,6 +10,7 @@ import net.minecraft.entity.TntEntity;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.packet.s2c.play.EntityVelocityUpdateS2CPacket;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -91,6 +92,11 @@ public class CustomExplosion extends Explosion {
                         w /= z;
                         x /= z;
                         y /= z;
+                        if (entity instanceof PlayerEntity playerEntity) {
+                            playerEntity.currentExplosionImpactPos = playerEntity.getPos();
+                            playerEntity.explodedBy = getOwner();
+                            playerEntity.setIgnoreFallDamageFromCurrentExplosion(true);
+                        }
                         if (this.behavior.shouldDamage(this, entity)) {
                             entity.damage(this.damageSource,  !(entity == owner) ? this.behavior.calculateDamage(this, entity) : 1);
                         }
@@ -108,12 +114,18 @@ public class CustomExplosion extends Explosion {
                         y *= ab;
                         Vec3d vec3d2 = new Vec3d(w, x, y);
                         entity.setVelocity(entity.getVelocity().add(vec3d2));
+                        if (entity instanceof ServerPlayerEntity serverPlayerEntity) {
+                            serverPlayerEntity.networkHandler.sendPacket(new EntityVelocityUpdateS2CPacket(serverPlayerEntity));
+                        }
                         if (entity instanceof PlayerEntity playerEntity) {
                             if (!playerEntity.isSpectator() && (!playerEntity.isCreative() || !playerEntity.getAbilities().flying)) {
                                 this.affectedPlayers.put(playerEntity, vec3d2);
                             }
                         }
 
+                        if (entity == getOwner()) {
+                            return;
+                        }
                         entity.onExplodedBy(this.entity);
                     }
                 }

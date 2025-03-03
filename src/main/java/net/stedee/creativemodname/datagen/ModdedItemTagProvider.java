@@ -25,6 +25,9 @@ public class ModdedItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ModdedTags.Items.GODLY_CLEAVER)
                 .add(ModdedItems.GODLY_CLEAVER);
 
+        getOrCreateTagBuilder(ModdedTags.Items.MOON_STAFF)
+                .add(ModdedItems.MOON_STAFF);
+
         getOrCreateTagBuilder(ModdedTags.Items.CLEAVERS)
                 .add(ModdedItems.CLEAVER)
                 .add(ModdedItems.GODLY_CLEAVER)
