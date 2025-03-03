@@ -16,6 +16,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.stedee.creativemodname.entity.custom.StaffFireballEntity;
 
 import java.util.List;
 
@@ -43,7 +44,7 @@ public class MoonStaffItem extends SwordItem {
             double d3 = look.z * 0.1D;
             Vec3d vec31 = new Vec3d(d1, d2, d3);
 
-            FireballEntity fireball = new FireballEntity(world, user, vec31, 3);
+            FireballEntity fireball = new StaffFireballEntity(world, user, vec31, 3);
             fireball.setPos(user.getX() + look.x * 1, user.getY() + 1.25, user.getZ() + look.z * 1);
             fireball.setVelocity(look);
             world.spawnEntity(fireball);

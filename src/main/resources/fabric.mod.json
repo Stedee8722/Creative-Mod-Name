@@ -1,42 +1,40 @@
 {
-  "schemaVersion": 1,
-  "id": "creativemodname",
-  "version": "${version}",
-  "name": "Creative Mod Name",
-  "description": "Aym's cutesy little custom Minecraft mod",
-  "authors": [],
-  "contact": {},
-  "license": "MIT",
-  "icon": "assets/creativemodname/creativemodname.icon.png",
-  "environment": "*",
-  "entrypoints": {
-    "client": [
-      "net.stedee.creativemodname.client.CreativeModNameClient"
-    ],
-    "fabric-datagen": [
-      "net.stedee.creativemodname.CreativeModNameDataGen"
-    ],
-    "main": [
-      "net.stedee.creativemodname.CreativeModName"
-    ]
-  },
-  "mixins": [
-    "creativemodname.mixins.json",
-    {
-      "config": "creativemodname.client.mixins.json",
-      "environment": "client"
-    }
-  ],
-  "depends": {
-    "fabricloader": ">=${loader_version}",
-    "fabric": "*",
-    "minecraft": "${minecraft_version}"
-  },
-  "custom": {
-    "modmenu": {
-      "links": {
-        "modmenu.discord": "https://discord.gg/jEGF5fb"
-      }
-    }
-  }
+	"schemaVersion": 1,
+	"id": "creativemodname",
+	"version": "${version}",
+	"name": "Creative Mod Name",
+	"description": "Aym's cutesy little custom Minecraft mod",
+	"authors": [
+		"Stedee"
+	],
+	"contact": {},
+	"license": "MIT",
+	"icon": "assets/creativemodname/creativemodname.icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.stedee.creativemodname.CreativeModName"
+		],
+		"fabric-datagen": [
+			"net.stedee.creativemodname.CreativeModNameDataGen"
+		]
+	},
+	"mixins": [
+		"creativemodname.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=${loader_version}",
+		"fabric": "*",
+		"minecraft": "${minecraft_version}"
+	},
+	"suggests": {
+		"another-mod": "*"
+	},
+	"custom": {
+		"modmenu": {
+			"links": {
+				"modmenu.discord": "https://discord.gg/jEGF5fb"
+			}
+		}
+	}
 }
