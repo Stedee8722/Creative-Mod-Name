@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:soul_lantern"
+    },
+    "C": {
+      "item": "minecraft:cookie"
+    },
+    "L": {
+      "item": "minecraft:string"
+    },
+    "S": {
+      "item": "minecraft:sugar"
+    },
+    "W": {
+      "item": "minecraft:wither_skeleton_skull"
+    }
+  },
+  "pattern": [
+    " # ",
+    "SCS",
+    "LWL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "creativemodname:plush_aym"
+  }
+}

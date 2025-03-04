@@ -26,11 +26,14 @@
   "sounds.creativemodname.cat_meows": "Cat meows",
   "sounds.creativemodname.lamb_baahs": "Lamb baahs",
   "sounds.creativemodname.rat_squeaks": "Rat squeaks",
+  "sounds.creativemodname.item_pops": "Item pops",
 
   "effect.creativemodname.bloodloss": "Bloodloss",
 
   "enchantment.creativemodname.serrated": "Serrated",
   "enchantment.creativemodname.bigger_fireball": "Bigger Fireball",
+  "enchantment.creativemodname.fireball_jumping": "Fireball Jumping",
+  "enchantment.creativemodname.block_explosion": "Block Explosion",
 
   "tag.block.creativemodname.plushies": "Plushies",
   "tag.item.creativemodname.cleavers": "Cleavers",

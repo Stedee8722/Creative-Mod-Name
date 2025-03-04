@@ -48,5 +48,10 @@
       "creativemodname:rat_squeak_3",
       "creativemodname:rat_squeak_4"
     ]
-  }
-}
+  },
+  "item_pops": {
+    "subtitle": "sounds.creativemodname.item_pops",
+    "sounds": [
+      "creativemodname:pop"
+    ]
+  }}

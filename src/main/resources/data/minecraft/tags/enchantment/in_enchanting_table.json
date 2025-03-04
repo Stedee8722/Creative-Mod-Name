@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "creativemodname:serrated"
+    "creativemodname:serrated",
+    "creativemodname:bigger_fireball",
+    "creativemodname:fireball_jumping",
+    "creativemodname:block_explosion"
   ]
 }

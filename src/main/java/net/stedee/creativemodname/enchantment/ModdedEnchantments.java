@@ -20,6 +20,12 @@ public class ModdedEnchantments {
     public static final RegistryKey<Enchantment> BIGGER_FIREBALL =
             RegistryKey.of(RegistryKeys.ENCHANTMENT, Identifier.of(CreativeModName.MOD_ID, "bigger_fireball"));
 
+    public static final RegistryKey<Enchantment> FIREBALL_JUMPING =
+            RegistryKey.of(RegistryKeys.ENCHANTMENT, Identifier.of(CreativeModName.MOD_ID, "fireball_jumping"));
+
+    public static final RegistryKey<Enchantment> BLOCK_EXPLOSION =
+            RegistryKey.of(RegistryKeys.ENCHANTMENT, Identifier.of(CreativeModName.MOD_ID, "block_explosion"));
+
     public static void bootstrap(Registerable<Enchantment> registerable) {
         var enchantments = registerable.getRegistryLookup(RegistryKeys.ENCHANTMENT);
         var items = registerable.getRegistryLookup(RegistryKeys.ITEM);
@@ -43,6 +49,29 @@ public class ModdedEnchantments {
                         items.getOrThrow(ModdedTags.Items.MOON_STAFF),
                         15,
                         3,
+                        Enchantment.leveledCost(9, 8),
+                        Enchantment.leveledCost(15, 10),
+                        2,
+                        AttributeModifierSlot.MAINHAND, AttributeModifierSlot.OFFHAND))
+                .exclusiveSet(enchantments.getOrThrow(EnchantmentTags.DAMAGE_EXCLUSIVE_SET)));
+
+        register(registerable, FIREBALL_JUMPING, Enchantment.builder(Enchantment.definition(
+                        items.getOrThrow(ModdedTags.Items.MOON_STAFF),
+                        items.getOrThrow(ModdedTags.Items.MOON_STAFF),
+                        15,
+                        1,
+                        Enchantment.leveledCost(9, 8),
+                        Enchantment.leveledCost(15, 10),
+                        2,
+                        AttributeModifierSlot.MAINHAND, AttributeModifierSlot.OFFHAND))
+                .exclusiveSet(enchantments.getOrThrow(EnchantmentTags.DAMAGE_EXCLUSIVE_SET)));
+                //.addEffect(EnchantmentEffectComponentTypes.DAMAGE, new AddEnchantmentEffect(EnchantmentLevelBasedValue.linear(-0.5F, 0F))));
+
+        register(registerable, BLOCK_EXPLOSION, Enchantment.builder(Enchantment.definition(
+                        items.getOrThrow(ModdedTags.Items.MOON_STAFF),
+                        items.getOrThrow(ModdedTags.Items.MOON_STAFF),
+                        5,
+                        1,
                         Enchantment.leveledCost(9, 8),
                         Enchantment.leveledCost(15, 10),
                         2,

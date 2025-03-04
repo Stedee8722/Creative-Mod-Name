@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:cooked_beef"
+    },
+    "B": {
+      "item": "minecraft:feather"
+    },
+    "C": {
+      "item": "minecraft:yellow_dye"
+    },
+    "D": {
+      "item": "minecraft:black_dye"
+    },
+    "E": {
+      "item": "minecraft:pink_dye"
+    },
+    "F": {
+      "item": "minecraft:white_wool"
+    },
+    "G": {
+      "item": "minecraft:purple_dye"
+    }
+  },
+  "pattern": [
+    "  A",
+    "BCD",
+    "EFG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "creativemodname:plush_rat"
+  }
+}

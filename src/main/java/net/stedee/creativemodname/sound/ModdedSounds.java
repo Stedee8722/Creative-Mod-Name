@@ -13,6 +13,7 @@ public class ModdedSounds {
     public static final SoundEvent LAMB_BAAHS = registerSoundEvent("lamb_baahs");
     public static final SoundEvent CUTE_LAMB_BAAHS = registerSoundEvent("cute_lamb_baahs");
     public static final SoundEvent RAT_SQUEAKS = registerSoundEvent("rat_squeaks");
+    public static final SoundEvent ITEM_POPS = registerSoundEvent("item_pops");
 
     private static SoundEvent registerSoundEvent(String name) {
         Identifier id = Identifier.of(CreativeModName.MOD_ID, name);

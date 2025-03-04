@@ -26,11 +26,14 @@
   "sounds.creativemodname.cat_meows": "Mèo kêu meo",
   "sounds.creativemodname.lamb_baahs": "Cừu kêu baa",
   "sounds.creativemodname.rat_squeaks": "Chuột kêu chít",
+  "sounds.creativemodname.item_pops": "Vật phẩm kêu tách",
 
   "effect.creativemodname.bloodloss": "Chảy máu",
 
   "enchantment.creativemodname.serrated": "Răng cưa",
   "enchantment.creativemodname.bigger_fireball": "Cầu lửa To",
+  "enchantment.creativemodname.fireball_jumping": "Nhảy Cầu lửa",
+  "enchantment.creativemodname.block_explosion": "Nổ Khối",
 
   "tag.block.creativemodname.plushies": "Thú bông",
   "tag.item.creativemodname.cleavers": "Dao phay",

@@ -6,6 +6,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ProjectileDeflection;
 import net.minecraft.entity.projectile.FireballEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.tag.EntityTypeTags;
 import net.minecraft.sound.SoundEvents;
@@ -22,14 +23,16 @@ import net.stedee.creativemodname.world.CustomExplosion;
 
 public class StaffFireballEntity extends FireballEntity {
     private int explosionPower = 1;
+    private ItemStack item;
 
     public StaffFireballEntity(EntityType<? extends StaffFireballEntity> entityType, World world) {
         super(entityType, world);
     }
 
-    public StaffFireballEntity(World world, LivingEntity owner, Vec3d velocity, int explosionPower) {
+    public StaffFireballEntity(ItemStack item, World world, LivingEntity owner, Vec3d velocity, int explosionPower) {
         super(world, owner, velocity, explosionPower);
         this.explosionPower = explosionPower;
+        this.item = item;
     }
 
     @Override
@@ -57,7 +60,7 @@ public class StaffFireballEntity extends FireballEntity {
                             ? Explosion.DestructionType.DESTROY_WITH_DECAY
                             : Explosion.DestructionType.DESTROY
                             : Explosion.DestructionType.KEEP;
-            CustomExplosion explosion = new CustomExplosion(this.getWorld(), this, Explosion.createDamageSource(this.getWorld(), this), null, this.getX(), this.getY(), this.getZ(), this.explosionPower, false, destructionType, ParticleTypes.EXPLOSION, ParticleTypes.EXPLOSION_EMITTER, SoundEvents.ENTITY_GENERIC_EXPLODE, getOwner());
+            CustomExplosion explosion = new CustomExplosion(this.item, this.getWorld(), this, Explosion.createDamageSource(this.getWorld(), this), null, this.getX(), this.getY(), this.getZ(), this.explosionPower, false, destructionType, ParticleTypes.EXPLOSION, ParticleTypes.EXPLOSION_EMITTER, SoundEvents.ENTITY_GENERIC_EXPLODE, getOwner());
             explosion.collectBlocksAndDamageEntities();
             explosion.affectWorld(true);
             this.discard();

@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_end_crystal": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:end_crystal"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_plush_rat": {
+      "conditions": {
+        "items": [
+          {
+            "items": "creativemodname:plush_rat"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "creativemodname:plush_hypno_rat"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_end_crystal",
+      "has_plush_rat"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "creativemodname:plush_hypno_rat"
+    ]
+  }
+}
