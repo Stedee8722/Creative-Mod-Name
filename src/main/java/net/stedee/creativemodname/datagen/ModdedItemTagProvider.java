@@ -3,6 +3,7 @@ package net.stedee.creativemodname.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
+import net.stedee.creativemodname.block.ModdedPlushieBlocks;
 import net.stedee.creativemodname.item.ModdedItems;
 import net.stedee.creativemodname.util.ModdedTags;
 
@@ -32,5 +33,11 @@ public class ModdedItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModdedItems.CLEAVER)
                 .add(ModdedItems.GODLY_CLEAVER)
                 .add(ModdedItems.WORN_CLEAVER);
+
+        getOrCreateTagBuilder(ModdedTags.Items.PLUSHIES)
+                .add(ModdedPlushieBlocks.PLUSH_RAT.asItem())
+                .add(ModdedPlushieBlocks.PLUSH_AYM.asItem())
+                .add(ModdedPlushieBlocks.PLUSH_ACID.asItem())
+                .add(ModdedPlushieBlocks.PLUSH_HYPNO_RAT.asItem());
     }
 }

@@ -23,6 +23,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
 import net.stedee.creativemodname.access.IServerWorld;
+import net.stedee.creativemodname.block.ModdedPlushieBlocks;
 import net.stedee.creativemodname.item.ModdedItems;
 import net.stedee.creativemodname.networking.packet.RenderBeaconBeamS2CPacket;
 import net.stedee.creativemodname.sound.ModdedSounds;
@@ -86,6 +87,30 @@ public class ItemEntityDestroyedEvent {
                 world.spawnEntity(newItemEntity);
                 world.playSound(null, finalBlockPos, ModdedSounds.ITEM_POPS, SoundCategory.BLOCKS, 1F, 1F);
             });
+        }
+
+        // check plush aym
+        if (!itemEntity.getWorld().isClient() && itemEntity.getStack().getItem() == ModdedPlushieBlocks.PLUSH_AYM.asItem() && reason.isOf(DamageTypes.IN_FIRE)) {
+            BlockPos blockPos = itemEntity.getBlockPos();
+            World world = itemEntity.getWorld();
+            for (int x = -1; x <= 1; x++) {
+                for (int z = -1; z <= 1; z++) {
+                    BlockPos blockPos2 = blockPos.add(x, 0, z);
+                    if (world.getBlockState(blockPos2).isOf(Blocks.FIRE)) {
+                        world.breakBlock(blockPos2.add(0, -1, 0), false);
+                        world.setBlockState(blockPos2.add(0, -1, 0), Blocks.SOUL_SOIL.getDefaultState(), Block.NOTIFY_ALL);
+                        world.setBlockState(blockPos2, Blocks.SOUL_FIRE.getDefaultState(), Block.NOTIFY_ALL);
+                        blockPos = blockPos2;
+                        break;
+                    } else if (world.getBlockState(blockPos2).isOf(Blocks.SOUL_FIRE)) {
+                        world.breakBlock(blockPos2.add(0, -1, 0), false);
+                        world.setBlockState(blockPos2.add(0, -1, 0), Blocks.NETHERRACK.getDefaultState(), Block.NOTIFY_ALL);
+                        world.setBlockState(blockPos2, Blocks.FIRE.getDefaultState(), Block.NOTIFY_ALL);
+                        blockPos = blockPos2;
+                        break;
+                    }
+                }
+            }
         }
     }
 }

@@ -25,6 +25,8 @@ public class ModdedTags {
 
         public static final TagKey<Item> MOON_STAFF = createTag("moon_staff");
 
+        public static final TagKey<Item> PLUSHIES = createTag("plushies");
+
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(CreativeModName.MOD_ID, name));
         }

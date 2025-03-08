@@ -1,0 +1,16 @@
+{
+  "structures": [
+    {
+      "structure": "creativemodname:crown_room",
+      "weight": 2
+    }
+  ],
+  "placement": {
+    "type": "minecraft:concentric_rings",
+    "distance": 13,
+    "spread": 5,
+    "count": 10,
+    "salt": 231604603,
+    "preferred_biomes": "#minecraft:stronghold_biased_to"
+  }
+}

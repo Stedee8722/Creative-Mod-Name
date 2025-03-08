@@ -17,6 +17,7 @@ public class CreativeModNameDataGen implements DataGeneratorEntrypoint {
         pack.addProvider(ModdedLootTableProvider::new);
         pack.addProvider(ModdedRegistryProvider::new);
         pack.addProvider(ModdedRecipeProvider::new);
+        pack.addProvider(ModdedAdvancementsProvider::new);
     }
 
     @Override

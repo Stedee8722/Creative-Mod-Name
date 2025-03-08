@@ -36,6 +36,7 @@
   "enchantment.creativemodname.block_explosion": "Block Explosion",
 
   "tag.block.creativemodname.plushies": "Plushies",
+  "tag.item.creativemodname.plushies": "Plushies",
   "tag.item.creativemodname.cleavers": "Cleavers",
   "tag.item.creativemodname.godly_cleaver": "Godly Cleaver (Fucking Minecraft need tags for enchants now)",
   "tag.item.creativemodname.moon_staff": "Moon Staff (Fucking Minecraft need tags for enchants now)",
@@ -45,5 +46,8 @@
   "key.creativemodname.goat_screams": "Make \"Goat Screams\" Sound",
   "key.creativemodname.cat_meows": "Make \"Cat Meows\" Sound",
   "key.creativemodname.lamb_baahs": "Make \"Lamb Baahs\" Sound",
-  "key.creativemodname.rat_squeaks": "Make \"Rat Squeaks\" Sound"
+  "key.creativemodname.rat_squeaks": "Make \"Rat Squeaks\" Sound",
+
+  "advancements.root.thank_you.title": "Creative Mod Name",
+  "advancements.root.thank_you.description": "Thank you for using my mod!"
 }

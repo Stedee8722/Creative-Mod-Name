@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:jigsaw",
+  "start_pool": "creativemodname:crown_room/start_pool",
+  "size": 1,
+  "max_distance_from_center": 5,
+  "biomes": "#creativemodname:has_structure/crown_room",
+  "step": "underground_structures",
+  "start_height": {
+    "type": "minecraft:uniform",
+    "min_inclusive": {
+      "absolute": 0
+    },
+    "max_inclusive": {
+      "absolute": 8
+    }
+  },
+  "use_expansion_hack": false,
+  "spawn_overrides": {}
+}

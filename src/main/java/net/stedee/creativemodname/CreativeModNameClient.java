@@ -8,7 +8,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 import net.stedee.creativemodname.block.ModdedPlushieBlocks;
-import net.stedee.creativemodname.client.BeaconBeamRenderer;
+import net.stedee.creativemodname.client.RendererRegister;
 import net.stedee.creativemodname.entity.ModdedEntities;
 import net.stedee.creativemodname.event.KeyInputHandler;
 import net.stedee.creativemodname.networking.ModdedClientPackets;
@@ -26,7 +26,7 @@ public class CreativeModNameClient implements ClientModInitializer {
 
         ModdedClientPackets.registerS2CPacketReceivers();
 
-        BeaconBeamRenderer.register();
+        RendererRegister.register();
     }
 
     public void setBlockRenderingType() {

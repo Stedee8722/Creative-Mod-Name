@@ -1,0 +1,45 @@
+{
+  "criteria": {
+    "have_plushies": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#creativemodname:plushies"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "have_weapons": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#creativemodname:weapons"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "creativemodname:textures/gui/config_bg.png",
+    "description": {
+      "translate": "advancements.root.thank_you.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "creativemodname:plush_aym"
+    },
+    "title": {
+      "translate": "advancements.root.thank_you.title"
+    }
+  },
+  "requirements": [
+    [
+      "have_weapons",
+      "have_plushies"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

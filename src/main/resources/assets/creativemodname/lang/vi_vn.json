@@ -36,14 +36,19 @@
   "enchantment.creativemodname.block_explosion": "Nổ Khối",
 
   "tag.block.creativemodname.plushies": "Thú bông",
+  "tag.item.creativemodname.plushies": "Thú bông",
   "tag.item.creativemodname.cleavers": "Dao phay",
   "tag.item.creativemodname.godly_cleaver": "Dao phay Thần thoại (Fucking Minecraft need tags for enchants now)",
   "tag.item.creativemodname.moon_staff": "Trượng Mặt Trăng (Fucking Minecraft need tags for enchants now)",
   "tag.item.creativemodname.weapons": "Vũ khí",
 
+
   "key.category.creativemodname.sounds": "Âm thanh (Creative Mod Name)",
   "key.creativemodname.goat_screams": "Tạo tiếng \"Dê la ahh\"",
   "key.creativemodname.cat_meows": "Tạo tiếng \"Mèo kêu meo\"",
   "key.creativemodname.lamb_baahs": "Tạo tiếng \"Cừu kêu baa\"",
-  "key.creativemodname.rat_squeaks": "Tạo tiếng \"Chuột kêu chít\""
+  "key.creativemodname.rat_squeaks": "Tạo tiếng \"Chuột kêu chít\"",
+
+  "advancements.root.thank_you.title": "Creative Mod Name",
+  "advancements.root.thank_you.description": "Cảm ơn đã sử dụng mod mà tôi mất rất nhiều công sức để tạo ra!"
 }
