@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "M": {
+      "item": "minecraft:milk_bucket"
+    },
+    "S": {
+      "item": "minecraft:sugar"
+    },
+    "W": {
+      "item": "minecraft:black_wool"
+    }
+  },
+  "pattern": [
+    "SWS",
+    "SWS",
+    "MSM"
+  ],
+  "result": {
+    "count": 1,
+    "id": "creativemodname:plush_marsh"
+  }
+}

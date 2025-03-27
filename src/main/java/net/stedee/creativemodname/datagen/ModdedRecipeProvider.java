@@ -78,6 +78,18 @@ public class ModdedRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.PURPLE_DYE), conditionsFromItem(Items.PURPLE_DYE))
                 .offerTo(recipeExporter);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModdedPlushieBlocks.PLUSH_MARSH, 1)
+                .pattern("SWS")
+                .pattern("SWS")
+                .pattern("MSM")
+                .input('S', Items.SUGAR)
+                .input('W', Items.BLACK_WOOL)
+                .input('M', Items.MILK_BUCKET)
+                .criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))
+                .criterion(hasItem(Items.BLACK_WOOL), conditionsFromItem(Items.BLACK_WOOL))
+                .criterion(hasItem(Items.MILK_BUCKET), conditionsFromItem(Items.MILK_BUCKET))
+                .offerTo(recipeExporter);
+
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModdedPlushieBlocks.PLUSH_HYPNO_RAT, 1)
                 .input(Items.END_CRYSTAL)
                 .input(ModdedPlushieBlocks.PLUSH_RAT)

@@ -18,5 +18,6 @@ public class ModdedLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModdedPlushieBlocks.PLUSH_AYM);
         addDrop(ModdedPlushieBlocks.PLUSH_RAT);
         addDrop(ModdedPlushieBlocks.PLUSH_HYPNO_RAT);
+        addDrop(ModdedPlushieBlocks.PLUSH_MARSH);
     }
 }

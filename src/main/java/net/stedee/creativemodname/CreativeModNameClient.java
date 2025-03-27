@@ -35,5 +35,6 @@ public class CreativeModNameClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModdedPlushieBlocks.PLUSH_RAT, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModdedPlushieBlocks.PLUSH_HYPNO_RAT, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModdedPlushieBlocks.PLUSH_ACID, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModdedPlushieBlocks.PLUSH_MARSH, RenderLayer.getCutout());
     }
 }

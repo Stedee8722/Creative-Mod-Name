@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "creativemodname:block/plush_marsh",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "creativemodname:block/plush_marsh",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "creativemodname:block/plush_marsh"
+    },
+    "facing=west": {
+      "model": "creativemodname:block/plush_marsh",
+      "y": 90
+    }
+  }
+}

@@ -69,6 +69,18 @@ public class ModdedPlushieBlocks {
                 return shape;
             }));
 
+    public static final Block PLUSH_MARSH = registerBlock("plush_marsh",
+            new PlushBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.CLEAR)
+                    .nonOpaque()
+                    .luminance(createLightLevelFromLitBlockState(13))
+                    .strength(0.3F, 1200F), () -> {
+                VoxelShape shape = VoxelShapes.empty();
+                shape = VoxelShapes.combine(shape, VoxelShapes.cuboid(0.3125, 0, 0.3125, 0.6875, 0.75, 0.6875), BooleanBiFunction.OR);
+
+                return shape;
+            }));
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(CreativeModName.MOD_ID, name), block);

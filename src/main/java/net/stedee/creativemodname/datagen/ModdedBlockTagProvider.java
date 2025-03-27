@@ -19,6 +19,7 @@ public class ModdedBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModdedPlushieBlocks.PLUSH_ACID)
                 .add(ModdedPlushieBlocks.PLUSH_AYM)
                 .add(ModdedPlushieBlocks.PLUSH_HYPNO_RAT)
-                .add(ModdedPlushieBlocks.PLUSH_RAT);
+                .add(ModdedPlushieBlocks.PLUSH_RAT)
+                .add(ModdedPlushieBlocks.PLUSH_MARSH);
     }
 }
