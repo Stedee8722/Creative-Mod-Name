@@ -62,6 +62,16 @@ public class PlushBlock extends HorizontalFacingBlock {
     }
 
     @Override
+    protected VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return PLUSHIE_SHAPE;
+    }
+
+    @Override
+    protected VoxelShape getCameraCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return PLUSHIE_SHAPE;
+    }
+
+    @Override
     protected VoxelShape getRaycastShape(BlockState state, BlockView world, BlockPos pos) {
         return PLUSHIE_SHAPE;
     }
