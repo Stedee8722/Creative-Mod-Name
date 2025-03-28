@@ -5,7 +5,9 @@ import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ItemEntity;
+import net.minecraft.entity.LightningEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.damage.DamageTypes;
 import net.minecraft.entity.player.PlayerEntity;
@@ -36,13 +38,13 @@ public class ItemEntityDestroyedEvent {
             World world = itemEntity.getWorld();
             if (!owner.isOnGround()) {
                 Vec3d startPos = owner.getPos();
-                Vec3d endPos = startPos.add(0, -256, 0); // Casting downward up to 256 blocks
+                Vec3d endPos = startPos.add(0, -256, 0);
 
                 BlockHitResult result = world.raycast(new RaycastContext(
                         startPos,
                         endPos,
-                        RaycastContext.ShapeType.OUTLINE, // Can be SOLID or VISUAL
-                        RaycastContext.FluidHandling.NONE, // Ignore fluids
+                        RaycastContext.ShapeType.OUTLINE,
+                        RaycastContext.FluidHandling.NONE,
                         owner
                 ));
 
@@ -51,7 +53,7 @@ public class ItemEntityDestroyedEvent {
                 }
             }
             for (ServerPlayerEntity player : PlayerLookup.tracking((ServerWorld) world, blockPos)) {
-                ServerPlayNetworking.send(player, new RenderBeaconBeamS2CPacket(blockPos, 1000)); //miliseconds
+                ServerPlayNetworking.send(player, new RenderBeaconBeamS2CPacket(blockPos, 1000)); // tick
             }
             for (int x = -2; x <= 2; x++) {
                 for (int z = -2; z <= 2; z++) {
@@ -74,15 +76,14 @@ public class ItemEntityDestroyedEvent {
             BlockPos finalBlockPos = blockPos;
             ((IServerWorld) itemEntity.getWorld()).creativemodname$setTimer(50, () -> {
                 ItemEntity newItemEntity = new ItemEntity(
-                        world,                      // World reference
-                        finalBlockPos.getX() + 0.5,           // Centered X position
-                        finalBlockPos.getY() + 0.5,           // Centered Y position
-                        finalBlockPos.getZ() + 0.5,           // Centered Z position
-                        new ItemStack(ModdedItems.GODLY_CLEAVER)                       // The item stack to drop
+                        world,
+                        finalBlockPos.getX() + 0.5,
+                        finalBlockPos.getY() + 0.5,
+                        finalBlockPos.getZ() + 0.5,
+                        new ItemStack(ModdedItems.GODLY_CLEAVER)
                 );
 
-                // Optional: Set motion (velocity) if needed
-                itemEntity.setVelocity(0, 0.1, 0); // Small bounce effect
+                itemEntity.setVelocity(0, 0.1, 0);
 
                 world.spawnEntity(newItemEntity);
                 world.playSound(null, finalBlockPos, ModdedSounds.ITEM_POPS, SoundCategory.BLOCKS, 1F, 1F);
@@ -111,6 +112,33 @@ public class ItemEntityDestroyedEvent {
                     }
                 }
             }
+            for (ServerPlayerEntity player : PlayerLookup.tracking((ServerWorld) world, blockPos)) {
+                ((ServerWorld) world).spawnParticles(player, ParticleTypes.END_ROD, false, blockPos.getX() + 0.5, blockPos.getY(), blockPos.getZ() + 0.5, 50, 0, 0, 0, 1);
+            }
+            LightningEntity lightning = new LightningEntity(EntityType.LIGHTNING_BOLT, world);
+            lightning.setPos(blockPos.getX(), blockPos.getY(), blockPos.getZ());
+            world.spawnEntity(lightning);
+            world.playSound(null, blockPos, SoundEvents.BLOCK_BEACON_ACTIVATE, SoundCategory.BLOCKS, 2.5F, 1F);
+            BlockPos finalBlockPos = blockPos;
+            ((IServerWorld) itemEntity.getWorld()).creativemodname$setTimer(70, () -> {
+                ItemEntity newItemEntity = new ItemEntity(
+                        world,
+                        finalBlockPos.getX() + 0.5,
+                        finalBlockPos.getY() + 0.5,
+                        finalBlockPos.getZ() + 0.5,
+                        new ItemStack(ModdedItems.MOON_STAFF)
+                );
+
+                itemEntity.setVelocity(0, 0.1, 0);
+
+                world.spawnEntity(newItemEntity);
+                for (int x = -1; x <= 1; x++) {
+                    for (int z = -1; z <= 1; z++) {
+                        world.breakBlock(finalBlockPos.add(x, 0, z), false);
+                    }
+                }
+                world.playSound(null, finalBlockPos, ModdedSounds.ITEM_POPS, SoundCategory.BLOCKS, 1F, 1F);
+            });
         }
     }
 }

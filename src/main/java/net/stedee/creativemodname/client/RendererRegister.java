@@ -8,7 +8,7 @@ public class RendererRegister {
     public static void register() {
         WorldRenderEvents.AFTER_ENTITIES.register(context -> {
             assert MinecraftClient.getInstance().world != null;
-            ModdedClientPackets.render(context.matrixStack(), context.consumers(), context.camera(), MinecraftClient.getInstance().world.getTime());
+            ModdedClientPackets.renderBeacon(context.matrixStack(), context.consumers(), context.camera(), MinecraftClient.getInstance().world.getTime());
         });
     }
 }

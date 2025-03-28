@@ -16,7 +16,6 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.stedee.creativemodname.CreativeModName;
 import net.stedee.creativemodname.enchantment.ModdedEnchantments;
 import net.stedee.creativemodname.entity.custom.StaffFireballEntity;
 import net.stedee.creativemodname.util.EnchantmentsUtil;
@@ -38,7 +37,6 @@ public class MoonStaffItem extends SwordItem {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack item = user.getStackInHand(hand);
         world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_BLAZE_SHOOT, SoundCategory.PLAYERS, 1F, 1F);
-        CreativeModName.LOGGER.info("Level: {}", EnchantmentsUtil.getLevel(item, ModdedEnchantments.FIREBALL_JUMPING));
         user.getItemCooldownManager().set(item.getItem(), user.isCreative() || EnchantmentsUtil.getLevel(item, ModdedEnchantments.FIREBALL_JUMPING) > 0 ? 10 : 200);
         if (!world.isClient()) {
             Vec3d look = user.getRotationVec(1F);

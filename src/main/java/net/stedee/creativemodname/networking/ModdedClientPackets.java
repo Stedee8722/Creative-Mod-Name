@@ -74,7 +74,7 @@ public class ModdedClientPackets {
         });
     }
 
-    public static void render(MatrixStack matrices, VertexConsumerProvider vertexConsumers, Camera camera, float tickDelta) {
+    public static void renderBeacon(MatrixStack matrices, VertexConsumerProvider vertexConsumers, Camera camera, float tickDelta) {
         MinecraftClient client = MinecraftClient.getInstance();
         if (client.world == null) return;
 
