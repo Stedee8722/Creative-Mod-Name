@@ -51,5 +51,13 @@
   "key.creativemodname.rat_squeaks": "Make \"Rat Squeaks\" Sound",
 
   "advancements.root.thank_you.title": "Creative Mod Name",
-  "advancements.root.thank_you.description": "Thank you for using my mod!"
+  "advancements.root.thank_you.description": "Thank you for using my mod!",
+  "advancements.weapons.sacrifice.title": "Sacrifice",
+  "advancements.weapons.sacrifice.description.dark_red": "Sacrifices",
+  "advancements.weapons.sacrifice.description.gold": " must be made.",
+  "advancements.weapons.make_cleaver.title": "Make Cleaver",
+  "advancements.weapons.make_cleaver.description": "Nice weapon you got there!",
+  "advancements.weapons.into_the_abyss.title": "Into the Abyss",
+  "advancements.weapons.into_the_abyss.description": "Cast a nether star into the end void",
+  "advancements.weapons.into_the_abyss.description.unused": "A hopeful light in the dark"
 }

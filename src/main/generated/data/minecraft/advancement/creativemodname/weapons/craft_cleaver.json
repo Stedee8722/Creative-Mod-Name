@@ -1,0 +1,29 @@
+{
+  "parent": "minecraft:creativemodname/root",
+  "criteria": {
+    "craft_cleaver": {
+      "conditions": {
+        "recipe_id": "creativemodname:cleaver"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.weapons.make_cleaver.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "creativemodname:cleaver"
+    },
+    "title": {
+      "translate": "advancements.weapons.make_cleaver.title"
+    }
+  },
+  "requirements": [
+    [
+      "craft_cleaver"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -2,6 +2,7 @@ package net.stedee.creativemodname;
 
 import net.fabricmc.api.ModInitializer;
 import net.stedee.creativemodname.block.ModdedPlushieBlocks;
+import net.stedee.creativemodname.criterion.ModdedCriteria;
 import net.stedee.creativemodname.effect.ModdedEffects;
 import net.stedee.creativemodname.enchantment.ModdedEnchantmentEffects;
 import net.stedee.creativemodname.entity.ModdedEntities;
@@ -35,5 +36,6 @@ public class CreativeModName implements ModInitializer {
         ModdedServerPackets.registerC2SPacketReceivers();
 
         ModdedEnchantmentEffects.registerEnchantmentEffects();
+        ModdedCriteria.registerCriterions();
     }
 }

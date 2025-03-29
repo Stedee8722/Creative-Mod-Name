@@ -26,12 +26,14 @@ import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
 import net.stedee.creativemodname.access.IServerWorld;
 import net.stedee.creativemodname.block.ModdedPlushieBlocks;
+import net.stedee.creativemodname.criterion.ModdedCriteria;
 import net.stedee.creativemodname.item.ModdedItems;
 import net.stedee.creativemodname.networking.packet.RenderBeaconBeamS2CPacket;
 import net.stedee.creativemodname.sound.ModdedSounds;
 
 public class ItemEntityDestroyedEvent {
     public static void ItemEntityDestroyed(ItemEntity itemEntity, PlayerEntity owner, DamageSource reason) {
+        ModdedCriteria.ITEM_ENTITY_REMOVED.trigger((ServerPlayerEntity) owner, itemEntity.getStack(), reason.getTypeRegistryEntry().getKey(), itemEntity.getWorld());
         // check nether star
         if (!itemEntity.getWorld().isClient() && itemEntity.getStack().getItem() == Items.NETHER_STAR && reason.isOf(DamageTypes.OUT_OF_WORLD) && itemEntity.getWorld().getRegistryKey() == World.END) {
             BlockPos blockPos = itemEntity.getBlockPos().withY(owner.getBlockY());

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:creativemodname/weapons/craft_cleaver",
+  "criteria": {
+    "into_the_abyss": {
+      "conditions": {
+        "damage_type": "minecraft:out_of_world",
+        "item": {
+          "items": "minecraft:nether_star"
+        },
+        "world": "minecraft:the_end"
+      },
+      "trigger": "creativemodname:item_entity_removed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.weapons.into_the_abyss.description"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "creativemodname:moon_staff"
+    },
+    "title": {
+      "translate": "advancements.weapons.into_the_abyss.title"
+    }
+  },
+  "requirements": [
+    [
+      "into_the_abyss"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
