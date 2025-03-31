@@ -82,10 +82,10 @@ public class ItemEntityDestroyedEvent {
                         finalBlockPos.getX() + 0.5,
                         finalBlockPos.getY() + 0.5,
                         finalBlockPos.getZ() + 0.5,
-                        new ItemStack(ModdedItems.GODLY_CLEAVER)
+                        new ItemStack(ModdedItems.WORN_CLEAVER)
                 );
 
-                itemEntity.setVelocity(0, 0.1, 0);
+                newItemEntity.setVelocity(0, 0.1, 0);
 
                 world.spawnEntity(newItemEntity);
                 world.playSound(null, finalBlockPos, ModdedSounds.ITEM_POPS, SoundCategory.BLOCKS, 1F, 1F);

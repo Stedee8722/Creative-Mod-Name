@@ -1,11 +1,13 @@
 package net.stedee.creativemodname;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.entity.event.v1.ServerEntityCombatEvents;
 import net.stedee.creativemodname.block.ModdedPlushieBlocks;
 import net.stedee.creativemodname.criterion.ModdedCriteria;
 import net.stedee.creativemodname.effect.ModdedEffects;
 import net.stedee.creativemodname.enchantment.ModdedEnchantmentEffects;
 import net.stedee.creativemodname.entity.ModdedEntities;
+import net.stedee.creativemodname.event.PlayerKillEntityEvent;
 import net.stedee.creativemodname.item.ModdedItemGroups;
 import net.stedee.creativemodname.item.ModdedItems;
 import net.stedee.creativemodname.networking.InitNetworking;
@@ -37,5 +39,7 @@ public class CreativeModName implements ModInitializer {
 
         ModdedEnchantmentEffects.registerEnchantmentEffects();
         ModdedCriteria.registerCriterions();
+
+        ServerEntityCombatEvents.AFTER_KILLED_OTHER_ENTITY.register(PlayerKillEntityEvent::spawnCleaverEvent);
     }
 }

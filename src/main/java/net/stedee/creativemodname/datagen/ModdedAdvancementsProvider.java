@@ -7,9 +7,12 @@ import net.minecraft.advancement.AdvancementEntry;
 import net.minecraft.advancement.AdvancementFrame;
 import net.minecraft.advancement.AdvancementRequirements;
 import net.minecraft.advancement.criterion.InventoryChangedCriterion;
+import net.minecraft.advancement.criterion.OnKilledCriterion;
 import net.minecraft.advancement.criterion.RecipeCraftedCriterion;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.damage.DamageTypes;
 import net.minecraft.item.Items;
+import net.minecraft.predicate.entity.EntityPredicate;
 import net.minecraft.predicate.item.ItemPredicate;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.text.Text;
@@ -97,7 +100,7 @@ public class ModdedAdvancementsProvider extends FabricAdvancementProvider {
         AdvancementEntry intoTheAbyssAdvancement = Advancement.Builder.create()
                 .parent(craftCleaverAdvancement)
                 .display(
-                        ModdedItems.MOON_STAFF.asItem(),
+                        ModdedItems.WORN_CLEAVER.asItem(),
                         Text.translatable("advancements.weapons.into_the_abyss.title"),
                         Text.translatable("advancements.weapons.into_the_abyss.description"),
                         null,
@@ -113,5 +116,35 @@ public class ModdedAdvancementsProvider extends FabricAdvancementProvider {
                                 Optional.ofNullable(World.END)
                         ))
                 .build(consumer, CreativeModName.MOD_ID + "/weapons/into_the_abyss");
+
+        AdvancementEntry bossRushAdvancement = Advancement.Builder.create()
+                .parent(intoTheAbyssAdvancement)
+                .display(
+                        ModdedItems.GODLY_CLEAVER.asItem(),
+                        Text.translatable("advancements.weapons.boss_rush.title"),
+                        Text.translatable("advancements.weapons.boss_rush.description"),
+                        null,
+                        AdvancementFrame.CHALLENGE,
+                        true,
+                        true,
+                        true
+                )
+                .criterion("kill_ender_dragon",
+                        OnKilledCriterion.Conditions.createPlayerKilledEntity(
+                                EntityPredicate.Builder.create().type(EntityType.ENDER_DRAGON)
+                        )
+                )
+                .criterion("kill_warden",
+                        OnKilledCriterion.Conditions.createPlayerKilledEntity(
+                                EntityPredicate.Builder.create().type(EntityType.WARDEN)
+                        )
+                )
+                .criterion("kill_wither",
+                        OnKilledCriterion.Conditions.createPlayerKilledEntity(
+                                EntityPredicate.Builder.create().type(EntityType.WITHER)
+                        )
+                )
+                .criteriaMerger(AdvancementRequirements.CriterionMerger.AND)
+                .build(consumer, CreativeModName.MOD_ID + "/weapons/boss_rush");
     }
 }

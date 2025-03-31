@@ -1,0 +1,73 @@
+{
+  "parent": "minecraft:creativemodname/weapons/into_the_abyss",
+  "criteria": {
+    "kill_ender_dragon": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:ender_dragon"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    },
+    "kill_warden": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:warden"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    },
+    "kill_wither": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:wither"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.weapons.boss_rush.description"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "creativemodname:godly_cleaver"
+    },
+    "title": {
+      "translate": "advancements.weapons.boss_rush.title"
+    }
+  },
+  "requirements": [
+    [
+      "kill_ender_dragon"
+    ],
+    [
+      "kill_warden"
+    ],
+    [
+      "kill_wither"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
