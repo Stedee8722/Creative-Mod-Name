@@ -5,13 +5,13 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.registry.tag.DamageTypeTags;
 import net.minecraft.world.World;
-import net.minecraft.world.event.GameEvent;
 import net.stedee.creativemodname.access.IItem;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(ItemEntity.class)
 public abstract class ItemEntityMixin extends Entity {
@@ -20,7 +20,6 @@ public abstract class ItemEntityMixin extends Entity {
     }
 
     @Shadow public abstract ItemStack getStack();
-    @Shadow private int health;
 
     @Override
     protected void tickInVoid() {
@@ -29,28 +28,9 @@ public abstract class ItemEntityMixin extends Entity {
         super.tickInVoid();
     }
 
-    @Override
-    public boolean damage(DamageSource source, float amount) {
+    @Inject(method = "damage", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;onItemEntityDestroyed(Lnet/minecraft/entity/ItemEntity;)V"))
+    public void damage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         ItemEntity itemEntity = (ItemEntity) (Object) this;
-        if (this.isInvulnerableTo(source)) {
-            return false;
-        } else if (!this.getStack().isEmpty() && this.getStack().isOf(Items.NETHER_STAR) && source.isIn(DamageTypeTags.IS_EXPLOSION)) {
-            return false;
-        } else if (!this.getStack().takesDamageFrom(source)) {
-            return false;
-        } else if (this.getWorld().isClient) {
-            return true;
-        } else {
-            this.velocityModified = true;
-            this.health = (int)((float)this.health - amount);
-            this.emitGameEvent(GameEvent.ENTITY_DAMAGE, source.getAttacker());
-            if (this.health <= 0) {
-                this.getStack().onItemEntityDestroyed(itemEntity);
-                ((IItem) this.getStack().getItem()).creativemodname$onItemEntityDestroyed(itemEntity, source);
-                this.discard();
-            }
-
-            return true;
-        }
+        ((IItem) this.getStack().getItem()).creativemodname$onItemEntityDestroyed(itemEntity, source);
     }
 }
