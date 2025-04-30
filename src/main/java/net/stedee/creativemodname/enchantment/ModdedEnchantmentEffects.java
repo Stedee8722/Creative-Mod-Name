@@ -18,6 +18,6 @@ public class ModdedEnchantmentEffects {
     }
 
     public static void registerEnchantmentEffects() {
-        CreativeModName.LOGGER.info("Registering Mod Enchantment Effects for " + CreativeModName.MOD_ID);
+        CreativeModName.LOGGER.info("Registering Enchantment Effects for " + CreativeModName.MOD_ID);
     }
 }

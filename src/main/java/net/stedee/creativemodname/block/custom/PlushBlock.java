@@ -2,18 +2,28 @@ package net.stedee.creativemodname.block.custom;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
+import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.ContainerComponent;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.item.tooltip.TooltipType;
+import net.minecraft.loot.context.LootContextParameterSet;
+import net.minecraft.loot.context.LootContextParameters;
+import net.minecraft.screen.ScreenHandler;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
+import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
-import net.minecraft.util.Hand;
-import net.minecraft.util.ItemActionResult;
+import net.minecraft.text.Text;
+import net.minecraft.util.*;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -23,12 +33,19 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 import net.minecraft.world.event.GameEvent;
+import net.stedee.creativemodname.block.entity.ModdedBlockEntities;
+import net.stedee.creativemodname.block.entity.custom.PlushBlockEntity;
 import net.stedee.creativemodname.sound.ModdedSounds;
+import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.function.Supplier;
 
-public class PlushBlock extends HorizontalFacingBlock {
+public class PlushBlock extends BlockWithEntity implements BlockEntityProvider {
+    private static final Text UNKNOWN_CONTENTS_TEXT = Text.translatable("container.shulkerBox.unknownContents");
+    public static final Identifier CONTENTS_DYNAMIC_DROP_ID = Identifier.ofVanilla("contents");
     public static final MapCodec<PlushBlock> CODEC = createCodec(PlushBlock::new);
+    public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
     private static VoxelShape PLUSHIE_SHAPE;
     public static final BooleanProperty LIT = Properties.LIT;
 
@@ -38,11 +55,12 @@ public class PlushBlock extends HorizontalFacingBlock {
 
     public PlushBlock(Settings settings, Supplier<VoxelShape> shape) {
         super(settings);
+        this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.NORTH).with(LIT, false));
         PLUSHIE_SHAPE = shape.get();
     }
 
     @Override
-    protected MapCodec<? extends HorizontalFacingBlock> getCodec() {
+    protected MapCodec<? extends PlushBlock> getCodec() {
         return CODEC;
     }
 
@@ -57,8 +75,23 @@ public class PlushBlock extends HorizontalFacingBlock {
     }
 
     @Override
+    protected BlockRenderType getRenderType(BlockState state) {
+        return BlockRenderType.MODEL;
+    }
+
+    @Override
+    protected BlockState rotate(BlockState state, BlockRotation rotation) {
+        return state.with(FACING, rotation.rotate(state.get(FACING)));
+    }
+
+    @Override
+    protected BlockState mirror(BlockState state, BlockMirror mirror) {
+        return state.rotate(mirror.getRotation(state.get(FACING)));
+    }
+
+    @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing()).with(LIT, Boolean.FALSE);
+        return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing());
     }
 
     @Override
@@ -92,21 +125,82 @@ public class PlushBlock extends HorizontalFacingBlock {
 
     @Override
     protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (stack.isOf(Items.GLOW_INK_SAC) && state.get(LIT).equals(Boolean.FALSE)) {
-            world.playSound(player, pos, SoundEvents.ITEM_GLOW_INK_SAC_USE, SoundCategory.BLOCKS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
-            world.setBlockState(pos, state.with(Properties.LIT, Boolean.TRUE), Block.NOTIFY_ALL_AND_REDRAW);
-            world.emitGameEvent(player, GameEvent.BLOCK_CHANGE, pos);
-            if (player != null) {
+        if (player.isSneaking()) {
+            if (stack.isOf(Items.GLOW_INK_SAC) && state.get(LIT).equals(Boolean.FALSE)) {
+                world.playSound(player, pos, SoundEvents.ITEM_GLOW_INK_SAC_USE, SoundCategory.BLOCKS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
+                world.setBlockState(pos, state.with(Properties.LIT, Boolean.TRUE), Block.NOTIFY_ALL_AND_REDRAW);
+                world.emitGameEvent(player, GameEvent.BLOCK_CHANGE, pos);
                 stack.decrement(1);
-            }
 
-            return ItemActionResult.success(world.isClient());
-        }
-        if (!player.getAbilities().allowModifyWorld) {
-            return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+                return ItemActionResult.success(world.isClient());
+            }
+            if (!player.getAbilities().allowModifyWorld) {
+                return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+            } else {
+                world.playSound(null, pos.getX(), pos.getY(), pos.getZ(), ModdedSounds.PLUSHIE_SQUEAKS, SoundCategory.BLOCKS, 1f, 1f);
+            }
         } else {
-            world.playSound(null, pos.getX(), pos.getY(), pos.getZ(), ModdedSounds.PLUSHIE_SQUEAKS, SoundCategory.BLOCKS, 1f, 1f);
-            return ItemActionResult.SUCCESS;
+            if (world.getBlockEntity(pos) instanceof PlushBlockEntity blockEntity) {
+                player.openHandledScreen(blockEntity);
+            }
+        }
+        return ItemActionResult.SUCCESS;
+    }
+
+    @Override
+    public BlockState onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+        BlockEntity blockEntity = world.getBlockEntity(pos);
+        if (blockEntity instanceof PlushBlockEntity plushBlockEntity) {
+            if (!world.isClient && player.isCreative() && !plushBlockEntity.isEmpty()) {
+                ItemStack itemStack = new ItemStack(state.getBlock().asItem());
+                itemStack.applyComponentsFrom(plushBlockEntity.createComponentMap());
+                ItemEntity itemEntity = new ItemEntity(world, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, itemStack);
+                itemEntity.setToDefaultPickupDelay();
+                world.spawnEntity(itemEntity);
+            }
+        }
+
+        return super.onBreak(world, pos, state, player);
+    }
+
+    @Override
+    protected List<ItemStack> getDroppedStacks(BlockState state, LootContextParameterSet.Builder builder) {
+        BlockEntity blockEntity = builder.getOptional(LootContextParameters.BLOCK_ENTITY);
+        if (blockEntity instanceof PlushBlockEntity plushBlockEntity) {
+            builder = builder.addDynamicDrop(CONTENTS_DYNAMIC_DROP_ID, lootConsumer -> {
+                for (int i = 0; i < plushBlockEntity.size(); i++) {
+                    lootConsumer.accept(plushBlockEntity.getStack(i));
+                }
+            });
+        }
+
+        return super.getDroppedStacks(state, builder);
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType options) {
+        super.appendTooltip(stack, context, tooltip, options);
+        if (stack.contains(DataComponentTypes.CONTAINER_LOOT)) {
+            tooltip.add(UNKNOWN_CONTENTS_TEXT);
+        }
+
+        int i = 0;
+        int j = 0;
+
+        for (ItemStack itemStack : stack.getOrDefault(DataComponentTypes.CONTAINER, ContainerComponent.DEFAULT).iterateNonEmpty()) {
+            j++;
+            if (i <= 4) {
+                if (i == 0) {
+                    tooltip.add(Text.empty());
+                    tooltip.add(Text.translatable("container.inventory").append(":").formatted(Formatting.YELLOW));
+                }
+                i++;
+                tooltip.add(Text.translatable("container.shulkerBox.itemCount", itemStack.getName(), itemStack.getCount()));
+            }
+        }
+
+        if (j - i > 0) {
+            tooltip.add(Text.translatable("container.shulkerBox.more", j - i).formatted(Formatting.ITALIC));
         }
     }
 
@@ -122,5 +216,39 @@ public class PlushBlock extends HorizontalFacingBlock {
             }
             return player.getBlockBreakingSpeed(state) / f / (float)i;
         }
+    }
+
+    @Override
+    public @Nullable BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+        return new PlushBlockEntity(pos, state);
+    }
+
+    @Override
+    protected void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
+        if(state.getBlock() != newState.getBlock()) {
+            BlockEntity blockEntity = world.getBlockEntity(pos);
+            if(blockEntity instanceof PlushBlockEntity) {
+                //ItemScatterer.spawn(world, pos, ((PlushBlockEntity) blockEntity));
+                world.updateComparators(pos, this);
+            }
+            super.onStateReplaced(state, world, pos, newState, moved);
+        }
+    }
+
+    @Override
+    protected boolean hasComparatorOutput(BlockState state) {
+        return true;
+    }
+
+    @Override
+    protected int getComparatorOutput(BlockState state, World world, BlockPos pos) {
+        return ScreenHandler.calculateComparatorOutput(world.getBlockEntity(pos));
+    }
+
+    @Override
+    public ItemStack getPickStack(WorldView world, BlockPos pos, BlockState state) {
+        ItemStack itemStack = super.getPickStack(world, pos, state);
+        world.getBlockEntity(pos, ModdedBlockEntities.PLUSH_BE).ifPresent(blockEntity -> blockEntity.setStackNbt(itemStack, world.getRegistryManager()));
+        return itemStack;
     }
 }

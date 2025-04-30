@@ -18,6 +18,6 @@ public class ModdedEffects {
     }
 
     public static void registerEffects() {
-        CreativeModName.LOGGER.info("Registering Mod Effects for " + CreativeModName.MOD_ID);
+        CreativeModName.LOGGER.info("Registering Effects for " + CreativeModName.MOD_ID);
     }
 }

@@ -42,8 +42,8 @@ public class ModdedItems {
         return Registry.register(Registries.ITEM, Identifier.of(CreativeModName.MOD_ID, name), item);
     }
 
-    public static void registerModItems() {
-        CreativeModName.LOGGER.info("Registering Mod Items for " + CreativeModName.MOD_ID);
+    public static void registerItems() {
+        CreativeModName.LOGGER.info("Registering Items for " + CreativeModName.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
         });

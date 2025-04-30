@@ -14,6 +14,8 @@ public class ModdedSounds {
     public static final SoundEvent CUTE_LAMB_BAAHS = registerSoundEvent("cute_lamb_baahs");
     public static final SoundEvent RAT_SQUEAKS = registerSoundEvent("rat_squeaks");
     public static final SoundEvent ITEM_POPS = registerSoundEvent("item_pops");
+    public static final SoundEvent BACKPACK_OPENS = registerSoundEvent("backpack_opens");
+    public static final SoundEvent BACKPACK_CLOSES = registerSoundEvent("backpack_closes");
 
     private static SoundEvent registerSoundEvent(String name) {
         Identifier id = Identifier.of(CreativeModName.MOD_ID, name);
@@ -21,6 +23,6 @@ public class ModdedSounds {
     }
 
     public static void registerSounds() {
-        CreativeModName.LOGGER.info("Registering Mod Sounds for " + CreativeModName.MOD_ID);
+        CreativeModName.LOGGER.info("Registering Sounds for " + CreativeModName.MOD_ID);
     }
 }

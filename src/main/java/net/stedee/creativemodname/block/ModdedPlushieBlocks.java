@@ -4,6 +4,8 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.MapColor;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.ContainerComponent;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -90,11 +92,12 @@ public class ModdedPlushieBlocks {
         Registry.register(Registries.ITEM, Identifier.of(CreativeModName.MOD_ID, name),
                 new PlushieItem(block, new Item.Settings()
                         .maxCount(1)
-                        .rarity(Rarity.EPIC)));
+                        .rarity(Rarity.EPIC)
+                        .component(DataComponentTypes.CONTAINER, ContainerComponent.DEFAULT)));
     }
 
-    public static void registerModBlocks() {
-        CreativeModName.LOGGER.info("Registering Mod Blocks for " + CreativeModName.MOD_ID);
+    public static void registerBlocks() {
+        CreativeModName.LOGGER.info("Registering Blocks for " + CreativeModName.MOD_ID);
     }
 
     public static ToIntFunction<BlockState> createLightLevelFromLitBlockState(int litLevel) {

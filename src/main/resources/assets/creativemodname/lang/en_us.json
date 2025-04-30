@@ -29,6 +29,8 @@
   "sounds.creativemodname.lamb_baahs": "Lamb baahs",
   "sounds.creativemodname.rat_squeaks": "Rat squeaks",
   "sounds.creativemodname.item_pops": "Item pops",
+  "sounds.creativemodname.backpack_opens": "Backpack opens",
+  "sounds.creativemodname.backpack_closes": "Backpack closes",
 
   "effect.creativemodname.bloodloss": "Bloodloss",
 
@@ -61,5 +63,7 @@
   "advancements.weapons.into_the_abyss.description": "Cast a nether star into the end void",
   "advancements.weapons.into_the_abyss.description.unused": "A hopeful light in the dark",
   "advancements.weapons.boss_rush.title": "The Strongest",
-  "advancements.weapons.boss_rush.description": "Beat the Warden, Ender Dragon and Wither"
+  "advancements.weapons.boss_rush.description": "Beat the Warden, Ender Dragon and Wither",
+
+  "container.creativemodname.plush_backpack.title": "Backpack"
 }

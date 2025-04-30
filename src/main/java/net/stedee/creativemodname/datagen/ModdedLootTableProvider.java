@@ -14,10 +14,10 @@ public class ModdedLootTableProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-        addDrop(ModdedPlushieBlocks.PLUSH_ACID);
-        addDrop(ModdedPlushieBlocks.PLUSH_AYM);
-        addDrop(ModdedPlushieBlocks.PLUSH_RAT);
-        addDrop(ModdedPlushieBlocks.PLUSH_HYPNO_RAT);
-        addDrop(ModdedPlushieBlocks.PLUSH_MARSH);
+        addDrop(ModdedPlushieBlocks.PLUSH_ACID, shulkerBoxDrops(ModdedPlushieBlocks.PLUSH_ACID));
+        addDrop(ModdedPlushieBlocks.PLUSH_AYM, shulkerBoxDrops(ModdedPlushieBlocks.PLUSH_AYM));
+        addDrop(ModdedPlushieBlocks.PLUSH_RAT, shulkerBoxDrops(ModdedPlushieBlocks.PLUSH_RAT));
+        addDrop(ModdedPlushieBlocks.PLUSH_HYPNO_RAT, shulkerBoxDrops(ModdedPlushieBlocks.PLUSH_HYPNO_RAT));
+        addDrop(ModdedPlushieBlocks.PLUSH_MARSH, shulkerBoxDrops(ModdedPlushieBlocks.PLUSH_MARSH));
     }
 }

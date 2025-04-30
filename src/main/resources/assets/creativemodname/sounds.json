@@ -54,4 +54,17 @@
     "sounds": [
       "creativemodname:pop"
     ]
-  }}
+  },
+  "backpack_opens": {
+    "subtitle": "sounds.creativemodname.backpack_opens",
+    "sounds": [
+      "creativemodname:backpack_opens"
+    ]
+  },
+  "backpack_closes": {
+    "subtitle": "sounds.creativemodname.backpack_closes",
+    "sounds": [
+      "creativemodname:backpack_closes"
+    ]
+  }
+}

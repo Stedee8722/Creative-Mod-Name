@@ -15,6 +15,6 @@ public class ModdedEntities {
                     .dimensions(1.0F, 1.0F).maxTrackingRange(4).trackingTickInterval(10).build());
 
     public static void registerEntities() {
-        CreativeModName.LOGGER.info("Registering Mod Entities for " + CreativeModName.MOD_ID);
+        CreativeModName.LOGGER.info("Registering Entities for " + CreativeModName.MOD_ID);
     }
 }

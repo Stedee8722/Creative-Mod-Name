@@ -29,6 +29,8 @@
   "sounds.creativemodname.lamb_baahs": "Cừu kêu baa",
   "sounds.creativemodname.rat_squeaks": "Chuột kêu chít",
   "sounds.creativemodname.item_pops": "Vật phẩm kêu tách",
+  "sounds.creativemodname.backpack_opens": "Cặp sách mở",
+  "sounds.creativemodname.backpack_closes": "Cặp sách đóng",
 
   "effect.creativemodname.bloodloss": "Chảy máu",
 
@@ -52,5 +54,17 @@
   "key.creativemodname.rat_squeaks": "Tạo tiếng \"Chuột kêu chít\"",
 
   "advancements.root.thank_you.title": "Creative Mod Name",
-  "advancements.root.thank_you.description": "Cảm ơn đã sử dụng mod mà tôi mất rất nhiều công sức để tạo ra!"
+  "advancements.root.thank_you.description": "Cảm ơn đã sử dụng mod mà tôi mất rất nhiều công sức để tạo ra!",
+  "advancements.weapons.sacrifice.title": "Hiến tế",
+  "advancements.weapons.sacrifice.description.dark_red": "Hiến tế",
+  "advancements.weapons.sacrifice.description.gold": " là hiển nhiên.",
+  "advancements.weapons.make_cleaver.title": "Tạo Dao phay",
+  "advancements.weapons.make_cleaver.description": "Uầy vũ khí đẹp đấy!",
+  "advancements.weapons.into_the_abyss.title": "Tiến vào Hư không",
+  "advancements.weapons.into_the_abyss.description": "Thả một ánh sao vào màn đêm tối",
+  "advancements.weapons.into_the_abyss.description.unused": "Một ánh sáng nhen nhói trong đêm",
+  "advancements.weapons.boss_rush.title": "Người khỏe nhất",
+  "advancements.weapons.boss_rush.description": "Đánh bại Warden, Rồng Ender và Wither",
+
+  "container.creativemodname.plush_backpack.title": "Cặp sách"
 }
