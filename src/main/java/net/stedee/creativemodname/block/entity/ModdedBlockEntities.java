@@ -17,7 +17,8 @@ public class ModdedBlockEntities {
                             ModdedPlushieBlocks.PLUSH_MARSH,
                             ModdedPlushieBlocks.PLUSH_AYM,
                             ModdedPlushieBlocks.PLUSH_HYPNO_RAT,
-                            ModdedPlushieBlocks.PLUSH_RAT
+                            ModdedPlushieBlocks.PLUSH_RAT,
+                            ModdedPlushieBlocks.PLUSH_GREY
                     ).build(null));
 
     public static void registerBlockEntities() {

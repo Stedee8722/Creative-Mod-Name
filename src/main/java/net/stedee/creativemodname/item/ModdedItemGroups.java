@@ -33,6 +33,7 @@ public class ModdedItemGroups {
                         entries.add(ModdedPlushieBlocks.PLUSH_HYPNO_RAT.asItem());
                         entries.add(ModdedPlushieBlocks.PLUSH_ACID.asItem());
                         entries.add(ModdedPlushieBlocks.PLUSH_MARSH.asItem());
+                        entries.add(ModdedPlushieBlocks.PLUSH_GREY.asItem());
                     })))
                     .build());
 

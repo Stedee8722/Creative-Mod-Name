@@ -19,5 +19,6 @@ public class ModdedLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModdedPlushieBlocks.PLUSH_RAT, shulkerBoxDrops(ModdedPlushieBlocks.PLUSH_RAT));
         addDrop(ModdedPlushieBlocks.PLUSH_HYPNO_RAT, shulkerBoxDrops(ModdedPlushieBlocks.PLUSH_HYPNO_RAT));
         addDrop(ModdedPlushieBlocks.PLUSH_MARSH, shulkerBoxDrops(ModdedPlushieBlocks.PLUSH_MARSH));
+        addDrop(ModdedPlushieBlocks.PLUSH_GREY, shulkerBoxDrops(ModdedPlushieBlocks.PLUSH_GREY));
     }
 }

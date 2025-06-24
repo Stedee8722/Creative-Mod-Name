@@ -125,7 +125,7 @@ public class PlushBlock extends BlockWithEntity implements BlockEntityProvider {
 
     @Override
     protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (player.isSneaking()) {
+        if (!player.isSneaking()) {
             if (stack.isOf(Items.GLOW_INK_SAC) && state.get(LIT).equals(Boolean.FALSE)) {
                 world.playSound(player, pos, SoundEvents.ITEM_GLOW_INK_SAC_USE, SoundCategory.BLOCKS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
                 world.setBlockState(pos, state.with(Properties.LIT, Boolean.TRUE), Block.NOTIFY_ALL_AND_REDRAW);

@@ -39,6 +39,7 @@ public class ModdedItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModdedPlushieBlocks.PLUSH_AYM.asItem())
                 .add(ModdedPlushieBlocks.PLUSH_ACID.asItem())
                 .add(ModdedPlushieBlocks.PLUSH_HYPNO_RAT.asItem())
-                .add(ModdedPlushieBlocks.PLUSH_MARSH.asItem());
+                .add(ModdedPlushieBlocks.PLUSH_MARSH.asItem())
+                .add(ModdedPlushieBlocks.PLUSH_GREY.asItem());
     }
 }
